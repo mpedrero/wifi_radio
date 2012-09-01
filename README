@@ -1,0 +1,36 @@
+Wifi Radio is a DIY project of an Internet Radio using Music Player Daemon.
+
+The hardware used consists in a Raspberry Pi model B, an USB Wifi adapter, an Arduino and LCD Keypad Shield for Arduino by DFRobot. This shield will be probably changed later.
+
+Raspberry Pi has latest version of Raspbian with MPD/MPC installed. A python program executed at boot controls the radio.
+
+Arduino is used to receive user interaction through LCD Keypad buttons and to display information in a 16x2 display. It is connected to RPi by USB.
+
+REQUERIMENTS:
+
+Arduino IDE v1.0 or later: http://arduino.cc/en/Main/Software
+LCDKeypad library modified (included in repo)
+
+Raspbian: http://www.raspberrypi.org/downloads
+PySerial: http://pyserial.sourceforge.net/
+
+
+INSTALLING:
+1. Copy LCDKeypad library to libraries folder in Arduino IDE
+2. Open, compile and transfer ArduinoRadio.ino to Arduino
+3. Install Raspbian in Raspberry Pi and setup an Internet connection
+4. Configure audio output in Raspberry Pi: http://elinux.org/R-Pi_Troubleshooting#Sound
+4. Install mpc, mpd and python-serial in Raspbian
+5. Connect LCDKeypad Shield to Arduino
+6. Connect Arduino to Raspberry Pi using a Model B USB
+7. Start Raspberry Pi and copy radio.py file
+8. Determine serial port used by Arduino (ls /dev/tty*)
+9. Modify serial port in radio.py if necessary
+10. Run radio.py (python radio.py)
+
+TODO:
++ Change stream
++ More info in screen
++ Web server for configuration
++ IR for controlling radio
+
